@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  * {
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-track span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .marquee-track {
+    gap: 1.5rem;
+    animation: marquee 15s linear infinite;
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(226 232 240); /* slate-200 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(168 85 247); /* purple-500 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(147 51 234); /* purple-600 */
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(30 41 59); /* slate-800 */
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(168 85 247); /* purple-500 */
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(147 51 234); /* purple-600 */
+}
